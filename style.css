@@ -44,6 +44,8 @@ header{
 
 .navbar li[role="nav-item"]{
     list-style: none;
+    position: relative;
+    
 }
 
 .navbar li[role="nav-item"]>a{
@@ -54,16 +56,32 @@ header{
 }
 
 .navbar li[role="nav-item"]>a:hover{
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
     color: var(--bg-grey);
     /* transform: scale(0.9,0.9); */
     width:auto;
     font-family: monospace;
     font-size: 130%;
     transition:all 1s ease-in-out;
-
+    
 }
 
+
+.navbar li>a::before{
+    content: "";
+    width:75px;
+    height: 20px;
+    left: 60px;
+    position: absolute;
+}
+
+.navbar li>a:hover::before{
+    transition: all 1s;
+    background-color: var(--color-primary);
+    color: var(--bg-grey);
+    left: 0px;
+    z-index: -7;
+}
 
 .navbar > ul{
     gap:20px;
